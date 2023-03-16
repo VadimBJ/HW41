@@ -2,14 +2,18 @@ public class Pizza {
 
   private String title;
   private int weight;
-  public static int maxWeight;
+  public static int maxWeight = Integer.MAX_VALUE;
 
   public static void setMaxWeight(int maxWeight) {
     Pizza.maxWeight = maxWeight;
   }
 
+  public static int getMaxWeight() {
+    return maxWeight;
+  }
+
   public Pizza(String title, int weight) {
-    if (weight < 0) {
+    if (weight < 0 || weight > maxWeight) {
       throw new IncorrectWeightException(weight);
     } else {
       this.weight = weight;
