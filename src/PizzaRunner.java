@@ -11,6 +11,7 @@ public class PizzaRunner {
   public static boolean parseArguments(String[] args) {
     if (args.length != 1) {
       System.err.println("Некорректное использование!");
+      System.exit(0);
     }
     try {
       int maxWeight = Integer.parseInt(args[0]);
